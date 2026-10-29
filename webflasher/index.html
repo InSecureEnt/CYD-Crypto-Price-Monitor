@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CYD Crypto Ticker – Web Flasher</title>
+  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+  <style>
+    body { background:#000; color:#ff9900; font-family:system-ui,sans-serif; max-width:640px; margin:40px auto; padding:0 20px; line-height:1.5; }
+    h1 { font-size:1.6rem; }
+    a { color:#ffb84d; }
+    ol li { margin-bottom:8px; }
+    .box { border:1px solid #ff9900; border-radius:10px; padding:16px 20px; margin:20px 0; }
+    esp-web-install-button button { background:#ff9900; color:#000; border:0; border-radius:8px; padding:12px 22px; font-size:1rem; font-weight:700; cursor:pointer; }
+    small { color:#a36100; }
+  </style>
+</head>
+<body>
+  <h1>CYD Crypto Ticker</h1>
+  <p>Shows live Bitcoin and Monero prices on an ESP32-2432S028 ("Cheap Yellow Display"). Tap the screen to refresh.</p>
+
+  <div class="box">
+    <esp-web-install-button manifest="manifest.json">
+      <span slot="unsupported">Your browser doesn't support web flashing. Use Chrome or Edge on a desktop computer.</span>
+      <span slot="not-allowed">Web flashing requires HTTPS.</span>
+    </esp-web-install-button>
+  </div>
+
+  <h2>How to use</h2>
+  <ol>
+    <li>Plug the board into your computer with a USB <b>data</b> cable.</li>
+    <li>Click <b>Install</b> above, choose the board's serial port, and confirm.</li>
+    <li>When flashing finishes, the screen shows a <b>CYD-Ticker-Setup</b> WiFi hotspot.</li>
+    <li>On your phone, join that hotspot, pick your home WiFi (2.4&nbsp;GHz) and save.</li>
+    <li>Prices appear within a few seconds.</li>
+  </ol>
+  <p><small>To forget the saved WiFi later, hold the screen while powering on the board until it says "WiFi settings cleared".</small></p>
+  <p><small>No port listed on Windows? Install the CH340 USB driver. Still stuck? Try another cable, since some only charge.</small></p>
+</body>
+</html>
