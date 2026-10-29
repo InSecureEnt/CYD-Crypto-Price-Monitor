@@ -247,7 +247,7 @@ void doRefresh() {
   bool ok = fetchPrices();
   if (ok) {
     drawAll();
-    showStatus("Updated - tap to refresh", ORANGE);
+    showStatus(WiFi.localIP().toString() + " - tap to refresh", ORANGE);
     waitMs = REFRESH_MS;
   } else {
     showStatus(lastError, TFT_RED);
@@ -279,7 +279,7 @@ void loop() {
     showStatus("Please wait a few seconds...", DIM_ORANGE);
     tapped = false;
     delay(800);
-    showStatus("Updated - tap to refresh", ORANGE);
+    showStatus(WiFi.localIP().toString() + " - tap to refresh", ORANGE);
   }
 
   if (first || tapped || millis() - lastFetch >= waitMs) {
